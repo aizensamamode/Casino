@@ -9,10 +9,10 @@ EXCALIDRAW
 
 [BANK MONEY 1]
 
-The (bank money 1) will show when the code run. Its the first thing that will show. 
+The (bank money 1) will show after the code run. It will be the first thing that will show. 
 
 What is bank money?
-Bank money is like the wallet of the user in this game
+The bank class will be look liek gcash where the money of player comes from
 
 -additional info-
 

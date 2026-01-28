@@ -17,7 +17,7 @@ public class Bank {
     }
     
     void bankshow1(){
-        System.out.println("----------------------------");
+        System.out.println("\n\n\n\n\n----------------------------");
         System.out.println("[BANK ACCOUNT]");
         System.out.println("[NAME : "+this.bankname+" ]");
         System.out.println("[MONEY: "+this.bankmoney+" ]");
