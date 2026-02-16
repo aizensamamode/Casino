@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class Bank {
     Scanner scan; // set no value but after the constructor is called it will now set to a object
     String bankname = "Mark";
-    int bankmoney   = 100;
+    int bankmoney   = 0;
     
     /*
     Bank(Scanner scan){
@@ -22,11 +22,11 @@ public class Bank {
         System.out.println("[NAME : "+this.bankname+" ]");
         System.out.println("[MONEY: "+this.bankmoney+" ]");
         System.out.println("----------------------------");
-        String halo = scan.nextLine();
+        String halo = scan.nextLine();// for enter. user press enter to get to nect stage
               
         //AFTER HERE THERE SHOULD BE SCANNER WHEN USER PRESS ENTER IT PROCED TO NEXT
     } 
-    
+     
     
     //---------------------------------------------------------------------
     //for Casino pass the player_name and not include the money cause we need him to widraw to play
@@ -34,4 +34,6 @@ public class Bank {
     String Player_name(){  // method to return player name
         return this.bankname;
     }
+
+    
 }
