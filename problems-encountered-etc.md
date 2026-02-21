@@ -3,7 +3,7 @@ Date 21/02/2026
 In creating play.java file, Ive encountered hardship to how can the three item can be randomize and show to the terminal
 im thinking how can i roll this things. im wondering if should i use array or 
 
-problem encounter this day
+problem encounter this day 1
 
 for (int i = 0; i < 3; i++) {
     spinIndexes[i] = rand.nextInt(emojis.length); // pick random index for this spin
@@ -20,4 +20,8 @@ then it will give back the value it got the the spinIndexes and go on the next
 spinResults[i] = emojis[spinIndexes[i]];
 first goes and the the value of spinIndexes[i] which is zero on the first run and store it in will indicated or direct it to emoji
 to whatever spinIndex get and store it in spinResult so spinResult now have one emojis value
+
+
+problem encounter this day 2
+how can i connect play.java and casino.java
 

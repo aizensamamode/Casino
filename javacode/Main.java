@@ -7,16 +7,17 @@ public class Main{
     String player_name = bank.Player_name();
     Casino casino = new Casino(player_name);
     Play play = new Play();
-
-   play.run_all();
     
-    
+    int play_casinochips;
+    int casino_casinochips;
 
     casino.getBank(bank);  //connect casino object here to casino
     bank.setscan(scanl);  // connect the bank scanner in the main scanner  scanl
     casino.setscan(scanl); // connect the casino scanner in the main scanner scanl
 
     while(casino.get_bankpass()){
+    
+    play.getCasinoChips(casino.casinoChips);
     
     bank.bankshow1(); //method 1 first to show when the program run after pressing enter should go to 
     //casinomenu1

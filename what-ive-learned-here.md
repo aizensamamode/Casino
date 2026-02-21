@@ -45,3 +45,8 @@ To understand why "passing the scanner" works, we look at how Java organizes mem
 | **Analogy** | A Post-it note with a GPS address | The actual House at that address |
 
 > **Why the value doesn'
+
+---
+21/02/2025
+
+YOU CAN ACCESS A VARIABLE WHEREVER IS IT AS LONG AS IT IS STATIC AND DECLARED ALRDY

@@ -3,14 +3,14 @@ package javacode;
 import java.util.Random;
 import java.util.Arrays;
 import java.util.Scanner;
-public class Play {
+public  class Play {
     Random random = new Random();
     Scanner scan = new Scanner(System.in);
 
     String[] fruits ={"🍉", "🍊", "🍓"};
     int jackpot;
     int player_bet;
-    int casinoChips = 100;
+    int casinoChips;
     String player_Answer = "back";
 
     void run_all(){
@@ -18,6 +18,8 @@ public class Play {
         set_player_Bet();
         player_menu();
     }
+    
+
     
 
     int multiplyer(int index_get){
@@ -39,7 +41,7 @@ public class Play {
     }
 
 
-    void game_Start (){
+     void game_Start (){
         System.out.println("[WELCOME TO THE GAME]");
         System.out.println("WIN IF ALL THREE SET ARE SHOWN");
         System.out.println("🍉| 🍉 | 🍉 = x 20");
@@ -109,11 +111,16 @@ public class Play {
             player_spin();
         }if (player_Answer.equalsIgnoreCase("back")) {
             System.out.println("THE END");
-            System.exit(0);
+            
         }if (player_Answer.equalsIgnoreCase("bet")) {
             set_player_Bet();
         }   
         
+    }
+
+    public int getCasinoChips( int ca) {
+        this.casinoChips = ca;
+        return this.casinoChips;
     }
 
 

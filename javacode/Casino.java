@@ -1,8 +1,11 @@
 package javacode;
 import java.util.Scanner;
 public class Casino {
+    Play play = new Play();
     String Player_name;
-    int casinoChips = 100;
+    
+   int casinoChips = 50;
+
     boolean for_bankpass = true;
     boolean for_namepass = false;
     private String answer;
@@ -64,7 +67,7 @@ public class Casino {
        }else if(answer.equalsIgnoreCase("deposit")){
           deposit();
        }else if(answer.equalsIgnoreCase("play")){
-          System.out.println("play");
+          play.run_all();
        }else{
         System.out.println("error");
        } 

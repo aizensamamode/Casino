@@ -10,3 +10,10 @@ NOT YET FINISHED ARE [DEPOSIT], [WIDRAW]
 CASINO MENU 2 STAGED
 
 29/01/2026
+
+
+21/02/2026
+play is alrdy done the problem is how can we pass the money in play.java in casino
+
+it cannot pass the money because casino class has its own object of play different on Main
+we need to fix it make it one
