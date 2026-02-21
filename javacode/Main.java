@@ -6,8 +6,16 @@ public class Main{
     Bank bank = new Bank();
     String player_name = bank.Player_name();
     Casino casino = new Casino(player_name);
+    Play play = new Play();
+
+    play.player_spin();
+    play.player_spin();
+    play.player_spin();
+    play.player_spin();
+    play.player_spin();
+    play.player_spin();
     
-    System.out.println("hello ☯ ☮ ✝");
+    
 
     casino.getBank(bank);  //connect casino object here to casino
     bank.setscan(scanl);  // connect the bank scanner in the main scanner  scanl
