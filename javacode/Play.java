@@ -50,14 +50,18 @@ public class Play {
     }
 
     void set_player_Bet (){
-        System.out.println("Set your bet : ");
+        System.out.println("\nSet your bet : ");
         player_bet = scan.nextInt();
         scan.nextLine();
+        player_menu();
     }
 
     void player_spin(){
         do{
-        
+            if (casinoChips <= 0) {
+                System.out.println("YOU ARE OUT OF MONEY");
+                player_menu();
+            }
         int index_firstroll = random.nextInt(fruits.length);
         int index_secondroll= random.nextInt(fruits.length);
         int index_thirdroll= random.nextInt(fruits.length);
@@ -67,10 +71,7 @@ public class Play {
         String third_Roll = fruits[index_thirdroll];
 
         System.out.println(first_Roll+"|"+second_Roll+"|"+third_Roll);
-        if (casinoChips <= 0) {
-            System.out.println("YOU ARE OUT OF MONEY");
-            player_menu();
-        }
+        
         if(index_firstroll == 0 && index_secondroll == 0 && index_thirdroll == 0 ){
            multiplyer(index_firstroll);
            System.out.println("You win "+jackpot);
@@ -97,9 +98,8 @@ public class Play {
     }
 
     void player_menu(){
-        
-        do {
-        System.out.println("CASINO CHIPS :" +casinoChips);
+
+        System.out.println("\n\nCASINO CHIPS :" +casinoChips);
         System.out.println("TO SPIN       = [SPIN]");
         System.out.println("SET BET AGAIN = [BET]");
         System.out.println("TO BACK       = [BACK]");
@@ -108,11 +108,12 @@ public class Play {
         if (player_Answer.equalsIgnoreCase("spin")) {
             player_spin();
         }if (player_Answer.equalsIgnoreCase("back")) {
-            System.out.println("go back");
+            System.out.println("THE END");
+            System.exit(0);
         }if (player_Answer.equalsIgnoreCase("bet")) {
             set_player_Bet();
         }   
-        } while (!player_Answer.equalsIgnoreCase("back"));
+        
     }
 
 
