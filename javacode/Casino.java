@@ -1,3 +1,4 @@
+package javacode;
 import java.util.Scanner;
 public class Casino {
     String Player_name;
@@ -44,9 +45,10 @@ public class Casino {
     System.out.println("         [CASINOMENU1]        ");
     System.out.println("\n Payername: "+this.Player_name);
     System.out.println(" Player Money: " + this.casinoChips+"\n");
-    System.out.println("TO WIDRAW = [WIDRAW]");
+    System.out.println("TO WIDRAW  = [WIDRAW]");
     System.out.println("TO DEPOSIT = [DEPOSIT]");
-    System.out.println("TO BACK = [BACK]");
+    System.out.println("TO BACK    = [BACK]");
+    System.out.println("TO PLAY    = [PLAY]");
     System.out.println("------------------------------");
     System.out.print("Answer : ");
     this.answer = scan.nextLine();

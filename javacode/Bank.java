@@ -1,3 +1,4 @@
+package javacode;
 import java.util.Scanner;
 public class Bank {
     Scanner scan; // set no value but after the constructor is called it will now set to a object

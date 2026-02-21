@@ -1,3 +1,4 @@
+package javacode;
 import java.util.Scanner;
 public class Main{
     public static void main(String[] args) { 
@@ -5,7 +6,9 @@ public class Main{
     Bank bank = new Bank();
     String player_name = bank.Player_name();
     Casino casino = new Casino(player_name);
-     
+    
+    System.out.println("hello ☯ ☮ ✝");
+
     casino.getBank(bank);  //connect casino object here to casino
     bank.setscan(scanl);  // connect the bank scanner in the main scanner  scanl
     casino.setscan(scanl); // connect the casino scanner in the main scanner scanl
