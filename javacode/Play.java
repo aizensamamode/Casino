@@ -8,9 +8,35 @@ public class Play {
     Scanner scan = new Scanner(System.in);
 
     String[] fruits ={"🍉", "🍊", "🍓"};
+    int jackpot;
     int player_bet;
-    String player_Answer;
+    int casinoChips = 100;
+    String player_Answer = "back";
+
+    void run_all(){
+        game_Start();
+        set_player_Bet();
+        player_menu();
+    }
     
+
+    int multiplyer(int index_get){
+        jackpot = 0;
+        jackpot = player_bet;
+        if(index_get == 0){//multiply 20x
+           jackpot *= 20;
+           casinoChips += jackpot;
+        }
+        if(index_get == 1){//multiply 10x
+           jackpot *= 10;
+           casinoChips += jackpot;
+        }
+        if(index_get == 2){//multiply 5x
+           jackpot *= 5;
+           casinoChips += jackpot;
+        }
+        return jackpot;
+    }
 
 
     void game_Start (){
@@ -26,17 +52,54 @@ public class Play {
     void set_player_Bet (){
         System.out.println("Set your bet : ");
         player_bet = scan.nextInt();
+        scan.nextLine();
     }
 
     void player_spin(){
-        String first_Roll = fruits[random.nextInt(fruits.length)];
-        String second_Roll = fruits[random.nextInt(fruits.length)];
-        String third_Roll = fruits[random.nextInt(fruits.length)];
-        System.out.println(first_Roll+"|"+second_Roll+"|"+third_Roll);
+        do{
         
+        int index_firstroll = random.nextInt(fruits.length);
+        int index_secondroll= random.nextInt(fruits.length);
+        int index_thirdroll= random.nextInt(fruits.length);
+
+        String first_Roll = fruits[index_firstroll];
+        String second_Roll = fruits[index_secondroll];
+        String third_Roll = fruits[index_thirdroll];
+
+        System.out.println(first_Roll+"|"+second_Roll+"|"+third_Roll);
+        if (casinoChips <= 0) {
+            System.out.println("YOU ARE OUT OF MONEY");
+            player_menu();
+        }
+        if(index_firstroll == 0 && index_secondroll == 0 && index_thirdroll == 0 ){
+           multiplyer(index_firstroll);
+           System.out.println("You win "+jackpot);
+        }
+        if(index_firstroll == 1 && index_secondroll == 1 && index_thirdroll == 1 ){
+            multiplyer(index_firstroll);
+            System.out.println("You win "+jackpot);
+        }
+        if(index_firstroll == 2 && index_secondroll == 2 && index_thirdroll == 2 ){
+            multiplyer(index_firstroll);
+            System.out.println("You win "+jackpot);
+        }else{
+            casinoChips -= player_bet;
+            System.out.println("you lose | -"+player_bet+" |");
+        }
+        System.out.println("MONEY : "+casinoChips+" BET : "+player_bet);
+        System.out.println("PRESS [ENTER] TO SPIN AGAIN | [BACK] TO BACK");
+        player_Answer = scan.nextLine();
+        if (player_Answer.equalsIgnoreCase("back")) {
+            player_menu();
+        }
+        }while(!player_Answer.equalsIgnoreCase("back")||player_bet == 0);
+
     }
 
     void player_menu(){
+        
+        do {
+        System.out.println("CASINO CHIPS :" +casinoChips);
         System.out.println("TO SPIN       = [SPIN]");
         System.out.println("SET BET AGAIN = [BET]");
         System.out.println("TO BACK       = [BACK]");
@@ -48,7 +111,8 @@ public class Play {
             System.out.println("go back");
         }if (player_Answer.equalsIgnoreCase("bet")) {
             set_player_Bet();
-        }
+        }   
+        } while (!player_Answer.equalsIgnoreCase("back"));
     }
 
 

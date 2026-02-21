@@ -8,12 +8,7 @@ public class Main{
     Casino casino = new Casino(player_name);
     Play play = new Play();
 
-    play.player_spin();
-    play.player_spin();
-    play.player_spin();
-    play.player_spin();
-    play.player_spin();
-    play.player_spin();
+   play.run_all();
     
     
 
